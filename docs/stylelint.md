@@ -1,5 +1,7 @@
 # 代码格式化、风格检查和提交规范体系
 
+## 代码风格
+
 ```bash
 pnpm add prettier -D
 
@@ -31,14 +33,15 @@ npx husky add .husky/pre-commit 'npm run lint'
 <footer>
 ```
 
-​​type 类型​​:
-  feat: 新功能
-  fix: 修复 bug
-  docs: 文档变更
-  style: 代码格式/样式变更
-  refactor: 重构代码
-  test: 测试相关
-  chore: 构建/依赖变更
-  revert: 回退
+### type 类型​​
 
-feat(login): add remember me functionality
+* feat: 新功能
+* fix: 修复 bug
+* docs: 文档变更
+* style: 代码格式/样式变更
+* refactor: 重构代码
+* test: 测试相关
+* chore: 构建/依赖变更
+* revert: 回退
+
+feat(login): add remember me func
