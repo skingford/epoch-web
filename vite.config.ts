@@ -4,7 +4,8 @@ import AutoImport from 'unplugin-auto-import/vite'
 import { visualizer } from 'rollup-plugin-visualizer'
 import legacy from '@vitejs/plugin-legacy'
 import { viteVConsole } from 'vite-plugin-vconsole';
-import {resolve} from 'path';
+import { resolve } from 'path';
+import eslintPlugin from 'vite-plugin-eslint'
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -15,6 +16,9 @@ export default defineConfig({
   },
   plugins: [
     vue(),
+    eslintPlugin({
+      include: ['src/**/*.vue', 'src/**/*.ts']
+    }),
     visualizer(),
     legacy({
       targets: ['defaults', 'not IE 11']
@@ -23,7 +27,7 @@ export default defineConfig({
       imports: ['vue', 'vue-router', 'pinia']
     }),
     viteVConsole({
-      entry: resolve('src/main.ts'), 
+      entry: resolve('src/main.ts'),
       enabled: true,
       config: {
         log: {

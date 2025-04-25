@@ -6,25 +6,28 @@
 # 创建项目
 npm create vite@latest epoch-web -- --template vue-ts
 
-pnpm add @vitejs/plugin-legacy -D
 
-pnpm add vite-plugin-inspect -D
+pnpm add  -D @vitejs/plugin-legacy
 
-pnpm add unplugin-auto-import -D
+pnpm add  -D vite-plugin-inspect 
 
-pnpm add vite-plugin-restart -D
+pnpm add  -D unplugin-auto-import
 
-pnpm add vite-plugin-svg-icons -D
+pnpm add  -D vite-plugin-restart
 
-pnpm add vite-plugin-compression -D
+pnpm add  -D vite-plugin-svg-icons
 
-pnpm add  vite-plugin-cdn-import -D
+pnpm add  -D vite-plugin-compression
 
-pnpm add vite-plugin-dts -D
+pnpm add -D vite-plugin-cdn-import
 
-pnpm add rollup-plugin-visualizer -D
+pnpm add -D vite-plugin-dts
 
-pnpm add vite-plugin-vconsole -D
+pnpm add -D rollup-plugin-visualizer 
+
+pnpm add -D vite-plugin-vconsole 
+
+pnpm add -D vite-plugin-eslint
 ```
 
 ## ncu
@@ -93,3 +96,19 @@ npm list --depth=0 > dependencies-after-upgrade.txt
 
 diff dependencies-before-upgrade.txt dependencies-after-upgrade.txt
 ```
+
+## 检查包
+
+```bash
+npm install -g npm-check
+
+npm-check -u
+
+```
+
+运行后会显示：
+
+已安装但未使用的包（红色显示）
+可以更新的包（黄色显示）
+最新版本的包（绿色显示）
+按空格键选择要删除的包，然后按回车确认。
