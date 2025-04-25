@@ -5,6 +5,7 @@ import globals from 'globals';
 import typescriptEslint from 'typescript-eslint';
 
 export default typescriptEslint.config(
+
   { ignores: ['*.d.ts', '**/coverage', '**/dist'] },
   {
     extends: [
@@ -16,14 +17,20 @@ export default typescriptEslint.config(
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',
-      globals: globals.browser,
+      globals: {
+        ...globals.browser, // 只会在浏览器上呈现的应用程序
+        ref: 'readonly',
+        computed: 'readonly',
+        watch: 'readonly',
+        watchEffect: 'readonly',
+      },
       parserOptions: {
         parser: typescriptEslint.parser,
       },
     },
     rules: {
       // your rules
-    },
+    }
   },
   eslintConfigPrettier
 );
