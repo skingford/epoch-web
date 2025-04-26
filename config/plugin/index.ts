@@ -1,45 +1,24 @@
-import vue from '@vitejs/plugin-vue';
-import AutoImport from 'unplugin-auto-import/vite'
-import Components from 'unplugin-vue-components/vite'
-import eslintPlugin from 'vite-plugin-eslint'
-import { visualizer } from 'rollup-plugin-visualizer'
-import legacy from '@vitejs/plugin-legacy'
-import { viteVConsole } from 'vite-plugin-vconsole';
+import { type PluginOption } from 'vite'
+import { createBasePlugins } from './base'
+import { createDevPlugins } from './dev'
+import { createProdPlugins } from './prod'
 
-
-export function createVitePlugins(rootDir: string) {
-  return [
-    vue(),
-    AutoImport({
-      imports: ['vue', 'vue-router', 'pinia'],
-      dts: 'types/auto-imports.d.ts', // 生成的自动导入声明文件
-    }),
-    Components({
-      dirs: ['src/components'], // 目标文件夹
-      extensions: ['vue', 'jsx'], // 文件类型
-      dts: 'types/components.d.ts', // 输出文件，里面都是一些import的组件键值对
-      resolvers: [],
-    }),
-    eslintPlugin({
-      include: [
-        `${rootDir}/src/**/*.ts`,
-        `${rootDir}/src/**/*.tsx`,
-        `${rootDir}/src/**/*.vue`,
-      ]
-    }),
-    visualizer(),
-    legacy({
-      targets: ['defaults', 'not IE 11']
-    }),
-    viteVConsole({
-      entry: `${rootDir}/src/main.ts`,
-      enabled: true,
-      config: {
-        log: {
-          maxLogNumber: 1000,
-        },
-        theme: 'light', // light | dark
-      }
-    })
+/**
+ * 创建 Vite 插件配置
+ * 根据环境变量动态加载不同的插件
+ */
+export function createVitePlugins(rootDir: string, isProd: boolean): PluginOption[] {
+  const vitePlugins: PluginOption[] = [
+    ...createBasePlugins(),
   ]
+
+  if (!isProd) {
+    // 开发环境加载的插件
+    vitePlugins.push(...createDevPlugins(rootDir))
+  } else {
+    // 生产环境加载的插件
+    vitePlugins.push(...createProdPlugins())
+  }
+
+  return vitePlugins
 }
