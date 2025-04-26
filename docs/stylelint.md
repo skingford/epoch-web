@@ -26,6 +26,10 @@ npx husky add .husky/pre-commit 'npm run lint'
 使用 npm run commit 或 git cz 进行交互式提交，遵循以下格式：
 
 ```bash
+git commit -m "不规范的提交消息"
+git commit --no-verify -m "紧急修复"
+
+
 <type>(<scope>): <subject>
 <BLANK LINE>
 <body>
