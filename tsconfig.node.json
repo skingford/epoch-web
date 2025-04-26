@@ -21,24 +21,9 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true,
-    "paths": {
-      "vite-plugin-eslint": [
-        "./node_modules/vite-plugin-eslint/dist/index.d.ts"
-      ]
-    }
+    "noUncheckedSideEffectImports": true
   },
   "include": [
     "vite.config.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist",
-    "build",
-    "coverage",
-    "public",
-    "vite-plugin-eslint/dist",
-    "**/*.test.ts",
-    "**/*.js"
   ]
 }

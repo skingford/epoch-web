@@ -1,42 +1,19 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import AutoImport from 'unplugin-auto-import/vite'
-import { visualizer } from 'rollup-plugin-visualizer'
-import legacy from '@vitejs/plugin-legacy'
-import { viteVConsole } from 'vite-plugin-vconsole';
-import { resolve } from 'path';
-import eslintPlugin from 'vite-plugin-eslint'
+import { defineConfig } from 'vite';
 import { fileURLToPath, URL } from 'node:url';
+import { createVitePlugins } from './config/plugin';
+
+
+
+const rootDir = fileURLToPath(new URL('./', import.meta.url));
+
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [
-    vue(),
-    eslintPlugin({
-      include: ['src/**/*.vue', 'src/**/*.ts']
-    }),
-    visualizer(),
-    legacy({
-      targets: ['defaults', 'not IE 11']
-    }),
-    AutoImport({
-      imports: ['vue', 'vue-router', 'pinia']
-    }),
-    viteVConsole({
-      entry: resolve('src/main.ts'),
-      enabled: true,
-      config: {
-        log: {
-          maxLogNumber: 1000,
-        },
-        theme: 'light', // light | dark
-      }
-    })
-  ],
+  plugins: createVitePlugins(rootDir),
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
-      '@assets': fileURLToPath(new URL('./src/assets', import.meta.url)),
+      '@config': fileURLToPath(new URL('./config', import.meta.url)),
     }
   },
   server: {

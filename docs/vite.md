@@ -15,6 +15,8 @@ pnpm add  -D vite-plugin-inspect
 
 pnpm add  -D unplugin-auto-import
 
+pnpm add -D unplugin-vue-components
+
 pnpm add  -D vite-plugin-restart
 
 pnpm add  -D vite-plugin-svg-icons
@@ -30,4 +32,5 @@ pnpm add -D rollup-plugin-visualizer
 pnpm add -D vite-plugin-vconsole 
 
 pnpm add -D vite-plugin-eslint
+
 ```
