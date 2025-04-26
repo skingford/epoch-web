@@ -1,5 +1,11 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
+import { getRootPath } from '@/utils'
+
+
+getRootPath()
+
+
 </script>
 
 <template>

@@ -61,6 +61,7 @@
     "vite-plugin-restart": "^0.4.2",
     "vite-plugin-svg-icons": "^2.0.1",
     "vite-plugin-vconsole": "^2.1.1",
+    "vite-tsconfig-paths": "6.0.0-beta.3",
     "vue-eslint-parser": "^10.1.3",
     "vue-tsc": "^2.2.10"
   }

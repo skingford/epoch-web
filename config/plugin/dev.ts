@@ -1,13 +1,14 @@
+import { type PluginOption } from 'vite'
 import eslintPlugin from 'vite-plugin-eslint'
 import { viteVConsole } from 'vite-plugin-vconsole'
-import { type PluginOption } from 'vite'
-
+import tsconfigPaths from 'vite-tsconfig-paths'
 /**
  * 创建开发环境插件配置
  * 这些插件只在开发环境中加载
  */
 export function createDevPlugins(rootDir: string): PluginOption[] {
   return [
+    tsconfigPaths(),
     eslintPlugin({
       include: [
         `${rootDir}/src/**/*.ts`,

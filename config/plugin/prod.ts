@@ -1,6 +1,6 @@
+import { type PluginOption } from 'vite'
 import legacy from '@vitejs/plugin-legacy'
 import { visualizer } from 'rollup-plugin-visualizer'
-import { type PluginOption } from 'vite'
 
 /**
  * 创建生产环境插件配置

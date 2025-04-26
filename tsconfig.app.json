@@ -17,17 +17,17 @@
       "vite-plugin-eslint": [
         "./node_modules/vite-plugin-eslint/dist/index.d.ts"
       ],
-      "@/*": [
-        "./src/*"
-      ],
-      "@config/*": [
-        "./config/*"
-      ]
+      // "@/*": [
+      //   "./src/*"
+      // ],
+      // "@config/*": [
+      //   "./config/*"
+      // ]
     },
   },
   "include": [
     "src/**/*.ts",
-    "src/**/*.d.ts",
+    "types/**/*.d.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
     "vite.config.ts"
