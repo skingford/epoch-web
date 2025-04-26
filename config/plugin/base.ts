@@ -1,15 +1,17 @@
+import { type PluginOption } from 'vite'
 import vue from '@vitejs/plugin-vue';
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
-import { type PluginOption } from 'vite'
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
 
 /**
  * 创建基础插件配置
  * 这些插件在所有环境中都会被加载
  */
-export function createBasePlugins(): PluginOption[] {
+export function createBasePlugins(rootDir: string): PluginOption[] {
   return [
     vue(),
+
     AutoImport({
       imports: ['vue', 'vue-router', 'pinia'],
       dts: 'types/auto-imports.d.ts', // 生成的自动导入声明文件
@@ -20,5 +22,11 @@ export function createBasePlugins(): PluginOption[] {
       dts: 'types/components.d.ts', // 输出文件，里面都是一些import的组件键值对
       resolvers: [],
     }),
+    createSvgIconsPlugin({
+      // Specify the icon folder to be cached
+      iconDirs: [`${rootDir}/src/assets/svg`],
+      // Specify symbolId format
+      symbolId: 'icon-[dir]-[name]'
+    })
   ]
 }

@@ -1,14 +1,19 @@
 {
   "extends": "@vue/tsconfig/tsconfig.dom.json",
   "compilerOptions": {
+    "baseUrl": ".",
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
     /* Linting */
     "strict": true,
+    "esModuleInterop": true,
+    "module": "ESNext",
+    "moduleResolution": "node",
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
-    "types": [],
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
     "typeRoots": [
       "./node_modules/@types",
       "./types"
@@ -17,12 +22,9 @@
       "vite-plugin-eslint": [
         "./node_modules/vite-plugin-eslint/dist/index.d.ts"
       ],
-      // "@/*": [
-      //   "./src/*"
-      // ],
-      // "@config/*": [
-      //   "./config/*"
-      // ]
+      "@/*": [
+        "./src/*"
+      ],
     },
   },
   "include": [

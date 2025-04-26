@@ -9,7 +9,7 @@ import { createProdPlugins } from './prod'
  */
 export function createVitePlugins(rootDir: string, isProd: boolean): PluginOption[] {
   const vitePlugins: PluginOption[] = [
-    ...createBasePlugins(),
+    ...createBasePlugins(rootDir),
   ]
 
   if (!isProd) {
