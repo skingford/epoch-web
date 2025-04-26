@@ -1,5 +1,4 @@
 import { type PluginOption } from 'vite'
-import legacy from '@vitejs/plugin-legacy'
 import { visualizer } from 'rollup-plugin-visualizer'
 
 /**
@@ -8,9 +7,6 @@ import { visualizer } from 'rollup-plugin-visualizer'
  */
 export function createProdPlugins(): PluginOption[] {
   return [
-    legacy({
-      targets: ['defaults', 'not IE 11']
-    }),
     visualizer()
   ]
 }

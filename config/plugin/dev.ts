@@ -1,5 +1,5 @@
 import { type PluginOption } from 'vite'
-import eslintPlugin from 'vite-plugin-eslint'
+
 import { viteVConsole } from 'vite-plugin-vconsole'
 
 /**
@@ -8,13 +8,6 @@ import { viteVConsole } from 'vite-plugin-vconsole'
  */
 export function createDevPlugins(rootDir: string): PluginOption[] {
   return [
-    eslintPlugin({
-      include: [
-        `${rootDir}/src/**/*.ts`,
-        `${rootDir}/src/**/*.tsx`,
-        `${rootDir}/src/**/*.vue`,
-      ]
-    }),
     viteVConsole({
       entry: `${rootDir}/src/main.ts`,
       enabled: true,

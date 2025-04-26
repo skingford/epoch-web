@@ -11,7 +11,6 @@ import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
 export function createBasePlugins(rootDir: string): PluginOption[] {
   return [
     vue(),
-
     AutoImport({
       imports: ['vue', 'vue-router', 'pinia'],
       dts: 'types/auto-imports.d.ts', // 生成的自动导入声明文件
