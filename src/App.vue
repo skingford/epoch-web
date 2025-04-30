@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import HelloWorld from './pages/HelloWorld.vue'
-import { getRootPath } from '@/utils'
+import HelloWorld from "./pages/HelloWorld.vue";
+import { getRootPath } from "@/utils";
 
-getRootPath()
-
+getRootPath();
 </script>
 
 <template>
