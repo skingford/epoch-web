@@ -16,6 +16,14 @@ export default defineConfig(({ mode }) => {
         '@config': `${rootDir}/config`,
       }
     },
+    // scss
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: '@use "@/styles/variables.scss" as *;'
+        }
+      }
+    },
     server: {
       host: true, // 允许局域网访问
       port: 8080
