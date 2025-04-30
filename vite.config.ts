@@ -37,7 +37,6 @@ export default defineConfig(({ mode }) => {
           comments: false
         }
       },
-      target: 'es2015',
       rollupOptions: {
         output: {
           manualChunks: {

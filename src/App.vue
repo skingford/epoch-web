@@ -2,9 +2,7 @@
 import HelloWorld from './pages/HelloWorld.vue'
 import { getRootPath } from '@/utils'
 
-
 getRootPath()
-
 
 </script>
 
