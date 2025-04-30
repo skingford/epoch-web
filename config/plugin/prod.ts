@@ -15,9 +15,15 @@ export function createProdPlugins(rootDir: string): PluginOption[] {
       filename: `${rootDir}/dist/report.html`,
       title: "Vite 打包分析",
       brotliSize: true,
-      sourcemap: true,
     }),
-    viteCompression(),
+    viteCompression({
+      verbose: true,
+      disable: false,
+      threshold: 10240,
+      algorithm: "gzip",
+      ext: ".gz",
+      deleteOriginFile: false,
+    }),
   ];
 
   const legacyPlugin = legacy({
