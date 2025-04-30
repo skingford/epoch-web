@@ -16,11 +16,33 @@ export default defineConfig(({ mode }) => {
         '@config': `${rootDir}/config`,
       }
     },
-    // scss
     css: {
+      devSourcemap: !isProd,
       preprocessorOptions: {
         scss: {
           additionalData: '@use "@/styles/variables.scss" as *;'
+        }
+      }
+    },
+    build: {
+      minify: 'terser',
+      terserOptions: {
+        compress: {
+          drop_console: true,
+          drop_debugger: true,
+          pure_funcs: ['console.log', 'console.info'],
+          passes: 2
+        },
+        format: {
+          comments: false
+        }
+      },
+      target: 'es2015',
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            vendor: ['vue', 'vue-router', 'pinia']
+          }
         }
       }
     },
