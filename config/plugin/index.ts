@@ -17,7 +17,7 @@ export function createVitePlugins(rootDir: string, isProd: boolean): PluginOptio
     vitePlugins.push(...createDevPlugins(rootDir))
   } else {
     // 生产环境加载的插件
-    vitePlugins.push(...createProdPlugins())
+    vitePlugins.push(...createProdPlugins(rootDir))
   }
 
   return vitePlugins
