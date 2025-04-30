@@ -1,7 +1,7 @@
 export default {
   extends: [
     'stylelint-config-standard',
-    'stylelint-config-recommended-vue',
+    'stylelint-config-recommended-vue'
   ],
   rules: {
     'selector-class-pattern': null,
@@ -19,9 +19,8 @@ export default {
         ignoreAtRules: ['extend', 'include', 'mixin', 'if', 'else', 'function', 'return', 'each', 'use']
       }
     ],
-    'no-duplicate-selectors': true,
     'color-hex-length': 'short',
     'color-function-notation': 'modern',
     'color-no-invalid-hex': true
   }
-}
+} 

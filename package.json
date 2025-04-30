@@ -14,6 +14,7 @@
     "preview": "vite preview",
     "prepare": "husky",
     "lint": "eslint --fix --ext .js,.ts,.vue src",
+    "lint:style": "stylelint \"src/**/*.{vue,css,scss}\" --fix --allow-empty-input",
     "format": "prettier --write \"src/**/*.{js,ts,vue}\"",
     "commitlint": "commitlint --from HEAD~1 --to HEAD --verbose",
     "commit": "git-cz"
