@@ -121,9 +121,6 @@ devDependencies:
   vite-plugin-inspect:
     specifier: ^11.0.1
     version: 11.0.1(vite@6.3.4)
-  vite-plugin-restart:
-    specifier: ^0.4.2
-    version: 0.4.2(vite@6.3.4)
   vite-plugin-svg-icons:
     specifier: ^2.0.1
     version: 2.0.1(vite@6.3.4)
@@ -7417,15 +7414,6 @@ packages:
       vite-dev-rpc: 1.0.7(vite@6.3.4)
     transitivePeerDependencies:
       - supports-color
-    dev: true
-
-  /vite-plugin-restart@0.4.2(vite@6.3.4):
-    resolution: {integrity: sha512-9aWN2ScJ8hbT7aC8SDeZnsbWapnslz1vhNq6Vgf2GU9WdN4NExlrWhtnu7pmtOUG3Guj8y6lPcUZ+ls7SVP33w==}
-    peerDependencies:
-      vite: ^2.9.0 || ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0
-    dependencies:
-      micromatch: 4.0.8
-      vite: 6.3.4(@types/node@22.15.3)(sass-embedded@1.87.0)(terser@5.39.0)
     dev: true
 
   /vite-plugin-svg-icons@2.0.1(vite@6.3.4):

@@ -1,12 +1,14 @@
 import { type PluginOption } from "vite";
 import legacy from "@vitejs/plugin-legacy";
 import { visualizer } from "rollup-plugin-visualizer";
+import viteCompression from "vite-plugin-compression";
 
 /**
  * 创建生产环境插件配置
  * 这些插件只在生产环境中加载
  */
 export function createProdPlugins(rootDir: string): PluginOption[] {
+  // TODO：根据配置开启对应插件
   const plugins: PluginOption[] = [
     visualizer({
       open: false,
@@ -15,6 +17,7 @@ export function createProdPlugins(rootDir: string): PluginOption[] {
       brotliSize: true,
       sourcemap: true,
     }),
+    viteCompression(),
   ];
 
   const legacyPlugin = legacy({

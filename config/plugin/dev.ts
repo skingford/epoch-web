@@ -1,6 +1,5 @@
-import { type PluginOption } from 'vite'
-
-import { viteVConsole } from 'vite-plugin-vconsole'
+import { type PluginOption } from "vite";
+import { viteVConsole } from "vite-plugin-vconsole";
 
 /**
  * 创建开发环境插件配置
@@ -15,8 +14,8 @@ export function createDevPlugins(rootDir: string): PluginOption[] {
         log: {
           maxLogNumber: 1000,
         },
-        theme: 'light', // light | dark
-      }
-    })
-  ]
+        theme: "light", // light | dark
+      },
+    }),
+  ];
 }
