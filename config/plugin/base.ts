@@ -3,6 +3,9 @@ import vue from '@vitejs/plugin-vue';
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
+import { createHtmlPlugin } from 'vite-plugin-html'
+import pkg from '../../package.json'
+
 
 /**
  * 创建基础插件配置
@@ -11,6 +14,15 @@ import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
 export function createBasePlugins(rootDir: string): PluginOption[] {
   return [
     vue(),
+    createHtmlPlugin({
+      entry: `${rootDir}/src/main.ts`,
+      inject: {
+        data: {
+          title: pkg.name,
+          version: pkg.version,
+        }
+      }
+    }),
     AutoImport({
       imports: ['vue', 'vue-router', 'pinia'],
       dts: 'types/auto-imports.d.ts', // 生成的自动导入声明文件

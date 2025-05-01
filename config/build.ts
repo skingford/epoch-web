@@ -3,6 +3,7 @@ import type { BuildEnvironmentOptions } from "vite";
 export function createBuildConfig(): BuildEnvironmentOptions {
   return {
     minify: "terser",
+    assetsInlineLimit: 4096, // 4kb 以下的文件转为 base64,
     terserOptions: {
       compress: {
         drop_console: true,
