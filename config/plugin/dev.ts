@@ -1,6 +1,6 @@
 import { type PluginOption } from "vite";
 import { viteVConsole } from "vite-plugin-vconsole";
-
+import { resolve } from "path";
 /**
  * 创建开发环境插件配置
  * 这些插件只在开发环境中加载
@@ -8,7 +8,7 @@ import { viteVConsole } from "vite-plugin-vconsole";
 export function createDevPlugins(rootDir: string): PluginOption[] {
   return [
     viteVConsole({
-      entry: `${rootDir}/src/main.ts`,
+      entry: resolve(`${rootDir}/src/main.ts`),
       enabled: true,
       config: {
         log: {
