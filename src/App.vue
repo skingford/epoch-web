@@ -1,39 +1,16 @@
-<script setup lang="ts">
-import HelloWorld from "./pages/HelloWorld.vue";
-import { getRootPath } from "@/utils";
-
-getRootPath();
-</script>
-
 <template>
-  <div class="bg">
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+  <main>
+    <router-view v-slot="{ Component }">
+      <transition>
+        <keep-alive :max="10" :include="keeps">
+          <component :is="Component" />
+        </keep-alive>
+      </transition>
+    </router-view>
+  </main>
 </template>
+<script setup lang="ts">
+import { getKeepAliveRoutes } from "@/routes";
 
-<style scoped lang="scss">
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-
-.bg {
-  background-color: $bg-color;
-}
-</style>
+const keeps = getKeepAliveRoutes();
+</script>

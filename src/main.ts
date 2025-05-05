@@ -2,24 +2,15 @@ import { createApp } from "vue";
 import "virtual:svg-icons-register";
 import "./style.css";
 import App from "./App.vue";
-import { createVersionPolling } from "version-polling";
+// import { setupVersionPolling } from "../config/version";
+import { router } from "./routes";
 
 function bootstrap() {
   const app = createApp(App);
 
-  createVersionPolling({
-    vcType: "chunkHash",
-    chunkName: "index",
-    silent: false,
-    onUpdate: (self) => {
-      const result = confirm("页面有更新，点击确定刷新页面！");
-      if (result) {
-        self.onRefresh();
-      } else {
-        self.onCancel();
-      }
-    },
-  });
+  app.use(router);
+
+  // setupVersionPolling();
 
   app.mount("#app");
 }
