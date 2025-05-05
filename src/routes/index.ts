@@ -1,5 +1,5 @@
 import { createWebHashHistory, createRouter } from 'vue-router'
-
+import type { RouteRecordRaw } from 'vue-router'
 
 const routes = [
   {
@@ -79,6 +79,9 @@ router.beforeEach((to, from) => {
   //     query: { redirect: to.fullPath },
   //   }
   // }
+
+  // 而此时 Pinia 也已经被安装。
+  //const store = useStore()
 })
 
 router.afterEach((to, from) => {
@@ -86,8 +89,14 @@ router.afterEach((to, from) => {
 })
 
 
+// 添加路由
+// router.addRoute({ path: '/new', component: NewComponent })
 
-export function getKeepAliveRoutes() {
+// // 删除路由
+// router.removeRoute('route-name')
+
+
+export function buildKeepAliveRoutes(routes: RouteRecordRaw[]) {
   const keepAliveRoutes: string[] = [];
   const routeStack: any[] = [...routes];
 

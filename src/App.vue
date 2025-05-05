@@ -10,7 +10,12 @@
   </main>
 </template>
 <script setup lang="ts">
-import { getKeepAliveRoutes } from "@/routes";
+import { buildKeepAliveRoutes, router } from "@/routes";
 
-const keeps = getKeepAliveRoutes();
+const routes = router.getRoutes()
+const keeps = buildKeepAliveRoutes(routes);
+
+
+console.log('[ routes ] >', routes, keeps)
+
 </script>

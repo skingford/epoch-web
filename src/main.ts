@@ -8,6 +8,10 @@ import { router } from "./routes";
 function bootstrap() {
   const app = createApp(App);
 
+  const pinia = createPinia()
+  app.use(pinia);
+
+
   app.use(router);
 
   // setupVersionPolling();
