@@ -114,3 +114,17 @@ export function buildKeepAliveRoutes(routes: RouteRecordRaw[]) {
 
   return keepAliveRoutes;
 }
+
+const buildRoutes = (menuData) => {
+  return menuData.map(item => ({
+    path: item.path,
+    name: item.name,
+    component: () => import(`@/views/${item.component}.vue`),
+    meta: {
+      title: item.meta.title,
+      icon: item.meta.icon,
+      requiresAuth: true
+    },
+    children: item.children ? buildRoutes(item.children) : []
+  }))
+}
