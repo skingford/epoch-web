@@ -31,3 +31,16 @@
 2025-05-07T10:34:10.003872Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/types/auto-imports.d.ts")}
 2025-05-07T10:34:10.003882Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@epoch/web"), path: AnchoredSystemPathBuf("apps/web") }}))
 2025-05-07T10:34:10.003913Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-07T10:35:23.503985Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("turbo.json")}
+2025-05-07T10:35:23.504004Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(All)
+2025-05-07T10:36:10.704249Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("turbo.json")}
+2025-05-07T10:36:10.704326Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(All)
+2025-05-07T10:36:48.503776Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("package.json")}
+2025-05-07T10:36:48.503784Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(All)
+2025-05-07T10:36:52.004161Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("_tmp_40570_f2abf4eb747c6e39ef89d2b17ded1ae7"), AnchoredSystemPathBuf("")}
+2025-05-07T10:36:52.004171Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-05-07T10:36:56.604981Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2025-05-07T10:36:56.604990Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2025-05-07T10:36:56.803652Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("pnpm-lock.yaml"), AnchoredSystemPathBuf("pnpm-lock.yaml.984428843")}
+2025-05-07T10:36:56.803659Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-05-07T10:37:05.127282Z  INFO turborepo_lib::daemon::server: triggering shutdown
