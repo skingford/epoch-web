@@ -5,7 +5,6 @@
 </template>
 
 <script setup lang="ts" name="SvgIcon">
-import { computed } from 'vue'
 const props = defineProps({
   prefix: {
     type: String,

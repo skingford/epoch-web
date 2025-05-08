@@ -4,9 +4,11 @@
   "extends": "./base.json",
   "compilerOptions": {
     "jsx": "preserve",
-    "lib": ["ESNext", "DOM"],
+    "lib": [
+      "ESNext",
+      "DOM"
+    ],
     "module": "ESNext",
-    "target": "ESNext",
-    "types": ["vite/client"]
+    "target": "ESNext"
   }
-} 
+}
