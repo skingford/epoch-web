@@ -50,3 +50,11 @@ pnpm clean
 * revert: 回退
 
 feat(login): add remember
+
+## 参考
+[vue3-turbo-component-lib-template](https://github.com/huangmingfu/vue3-turbo-component-lib-template/blob/master/README.md)
+[turborepo](https://github.com/vercel/turborepo/tree/main)
+[blitz](https://github.com/blitz-js/blitz)
+[web-infra-dev](https://github.com/web-infra-dev/modern.js)
+[changesets](https://github.com/changesets/changesets)
+[highlight](https://github.com/highlight/highlight?tab=readme-ov-file)

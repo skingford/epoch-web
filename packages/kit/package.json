@@ -1,0 +1,16 @@
+{
+  "name": "@epoch/kit",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.ts",
+  "types": "index.ts",
+  "scripts": {},
+  "dependencies": {
+    "lodash-es": "^4.17.21"
+  },
+  "devDependencies": {
+    "@types/lodash-es": "^4.17.12",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  }
+}
