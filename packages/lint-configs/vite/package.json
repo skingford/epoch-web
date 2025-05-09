@@ -4,6 +4,9 @@
   "private": true,
   "main": "index.ts",
   "types": "index.ts",
+  "scripts": {
+    "clean": "rimraf .turbo node_modules dist"
+  },
   "dependencies": {
     "vite": "^5.0.0",
     "vue": "^3.0.0",

@@ -4,7 +4,9 @@
   "private": true,
   "main": "./src/index.ts",
   "types": "./types/index.d.ts",
-  "scripts": {},
+  "scripts": {
+    "clean": "rimraf .turbo node_modules dist"
+  },
   "dependencies": {
     "lodash-es": "^4.17.21"
   },

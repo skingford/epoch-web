@@ -5,5 +5,8 @@
   "files": [
     "build.json",
     "vite.json"
-  ]
+  ],
+  "scripts": {
+    "clean": "rimraf .turbo node_modules dist"
+  }
 }
