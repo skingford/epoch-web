@@ -1,5 +1,5 @@
 {
-  "name": "@epoch/vite-config",
+  "name": "@epoch/vite",
   "version": "1.0.0",
   "private": true,
   "main": "index.ts",

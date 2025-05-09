@@ -53,10 +53,10 @@ importers:
     devDependencies:
       '@epoch/tsconfig':
         specifier: workspace:*
-        version: link:../../packages/tsconfig
-      '@epoch/vite-config':
+        version: link:../../packages/lint-configs/tsconfig
+      '@epoch/vite':
         specifier: workspace:*
-        version: link:../../packages/vite-config
+        version: link:../../packages/lint-configs/vite
       '@eslint/eslintrc':
         specifier: ^3.3.1
         version: 3.3.1
@@ -173,9 +173,9 @@ importers:
         specifier: ^5.0.0
         version: 5.8.3
 
-  packages/tsconfig: {}
+  packages/lint-configs/tsconfig: {}
 
-  packages/vite-config:
+  packages/lint-configs/vite:
     dependencies:
       lodash-es:
         specifier: ^4.17.21

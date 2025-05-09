@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@epoch/tsconfig": "workspace:*",
-    "@epoch/vite-config": "workspace:*",
+    "@epoch/vite": "workspace:*",
     "@eslint/eslintrc": "^3.3.1",
     "@eslint/js": "^9.25.1",
     "@types/node": "^22.15.3",

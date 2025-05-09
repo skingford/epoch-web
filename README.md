@@ -9,7 +9,9 @@
 ├── apps/                # 应用目录
 │   └── web/            # Web 应用
 ├── packages/           # 共享包目录
-│   ├── tsconfig/      # TypeScript 配置
+│   ├── kit/            # 工具包
+│   ├── lint-configs/   # 代码风格配置
+│   │   └── tsconfig/  # TypeScript 配置
 │   ├── ui/            # UI 组件库
 │   └── config/        # 共享配置
 ```
