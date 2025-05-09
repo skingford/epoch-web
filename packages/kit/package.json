@@ -2,8 +2,8 @@
   "name": "@epoch/kit",
   "version": "1.0.0",
   "private": true,
-  "main": "index.ts",
-  "types": "index.ts",
+  "main": "./src/index.ts",
+  "types": "./types/index.d.ts",
   "scripts": {},
   "dependencies": {
     "lodash-es": "^4.17.21"
