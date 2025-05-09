@@ -38,7 +38,7 @@ export default defineConfig(({ mode }) => {
     css: {
       devSourcemap: !isProd,
       modules: {
-        localsConvention: "camelCaseOnly",
+        localsConvention: "dashesOnly",
         generateScopedName: "[name]__[local]___[hash:base64:5]",
       },
       preprocessorOptions: {

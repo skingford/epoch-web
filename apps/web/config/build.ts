@@ -28,6 +28,7 @@ export function createBuildConfig(): BuildEnvironmentOptions {
             const packageName = id.match(
               /node_modules[\/\\](?:\.pnpm[\/\\])?([^\/\\]+)/
             )?.[1];
+
             if (packageName) {
               // 根据包名进行分包
               if (/^@?vue/.test(packageName)) return "vue-vendor";
@@ -37,6 +38,8 @@ export function createBuildConfig(): BuildEnvironmentOptions {
               return "common-vendor";
             }
           }
+          // 为没有匹配到的路径返回默认值
+          return "unknow-vendor";
         },
       },
     },
