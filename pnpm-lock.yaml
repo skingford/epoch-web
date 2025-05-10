@@ -26,6 +26,9 @@ importers:
       rimraf:
         specifier: ^5.0.5
         version: 5.0.10
+      stylelint:
+        specifier: ^16.19.1
+        version: 16.19.1
       turbo:
         specifier: ^2.5.3
         version: 2.5.3
@@ -168,6 +171,10 @@ importers:
         version: 3.3.0(@types/node@22.15.3)(typescript@5.8.3)
 
   packages/lint-configs/eslint:
+    dependencies:
+      globals:
+        specifier: ^16.0.0
+        version: 16.0.0
     devDependencies:
       '@eslint/eslintrc':
         specifier: ^3.3.1
@@ -4954,7 +4961,6 @@ packages:
   /globals@16.0.0:
     resolution: {integrity: sha512-iInW14XItCXET01CQFqudPOWP2jYMl7T+QRQT+UNcR/iQncN/F0UNpgd76iFkBPgNQb4+X3LV9tLJYzwh+Gl3A==}
     engines: {node: '>=18'}
-    dev: true
 
   /globalthis@1.0.4:
     resolution: {integrity: sha512-DpLKbNU4WylpxJykQujfCcwYWiV/Jhm50Goo0wrVILAv5jOr9d+H+UR3PhSCD2rCCEIg0uc+G+muBTwD54JhDQ==}

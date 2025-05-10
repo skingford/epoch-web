@@ -12,16 +12,19 @@
     "clean": "turbo run clean && rimraf node_modules",
     "dev": "turbo run dev",
     "format": "turbo run format",
+    "lint": "turbo run lint",
+    "lint:style": "turbo run lint:style",
     "prepare": "husky install"
   },
   "devDependencies": {
     "@epoch/commitlint": "workspace:*",
     "@epoch/eslint": "workspace:*",
-    "@epoch/stylelint": "workspace:*",
     "@epoch/prettier": "workspace:*",
+    "@epoch/stylelint": "workspace:*",
     "husky": "^9.1.7",
-    "turbo": "^2.5.3",
-    "rimraf": "^5.0.5"
+    "rimraf": "^5.0.5",
+    "stylelint": "^16.19.1",
+    "turbo": "^2.5.3"
   },
   "husky": {
     "hooks": {

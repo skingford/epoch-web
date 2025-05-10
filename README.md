@@ -30,6 +30,10 @@ pnpm build
 
 # 清理
 pnpm clean
+
+pnpm add -wD pkg_name
+
+pnpm --filter "package-a package-b" add lodash
 ```
 
 ## 技术栈

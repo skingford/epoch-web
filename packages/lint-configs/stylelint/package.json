@@ -2,7 +2,15 @@
   "name": "@epoch/stylelint",
   "version": "1.0.0",
   "private": true,
-  "main": "index.js",
+  "type": "module",
+  "main": "./index.mjs",
+  "module": "./index.mjs",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "default": "./index.mjs"
+    }
+  },
   "scripts": {
     "clean": "rimraf .turbo node_modules dist"
   },
