@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   // 是否在语句末尾添加分号
   semi: true,
   // 使用单引号代替双引号

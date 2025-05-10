@@ -1,0 +1,12 @@
+{
+  "name": "@epoch/prettier",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf .turbo node_modules dist"
+  },
+  "devDependencies": {
+    "prettier": "^3.5.3"
+  }
+}

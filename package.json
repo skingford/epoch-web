@@ -19,8 +19,8 @@
     "@epoch/commitlint": "workspace:*",
     "@epoch/eslint": "workspace:*",
     "@epoch/stylelint": "workspace:*",
+    "@epoch/prettier": "workspace:*",
     "husky": "^9.1.7",
-    "prettier": "^3.5.3",
     "turbo": "^2.5.3",
     "rimraf": "^5.0.5"
   },
