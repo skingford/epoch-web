@@ -23,5 +23,10 @@
     "turbo": "^2.5.3",
     "rimraf": "^5.0.5"
   },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS"
+    }
+  },
   "packageManager": "pnpm@10.10.0"
 }
