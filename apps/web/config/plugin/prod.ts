@@ -10,12 +10,6 @@ import viteCompression from "vite-plugin-compression";
 export function createProdPlugins(rootDir: string): PluginOption[] {
   // TODO：根据配置开启对应插件
   const plugins: PluginOption[] = [
-    visualizer({
-      open: false,
-      filename: `${rootDir}/dist/report.html`,
-      title: "Vite 打包分析",
-      brotliSize: true,
-    }),
     viteCompression({
       verbose: true,
       disable: false,
@@ -25,6 +19,15 @@ export function createProdPlugins(rootDir: string): PluginOption[] {
       deleteOriginFile: false,
     }),
   ];
+
+  const visualizerPlugin = visualizer({
+    open: false,
+    filename: `${rootDir}/dist/report.html`,
+    title: "Vite 打包分析",
+    brotliSize: true,
+  })
+
+  plugins.push(visualizerPlugin as PluginOption);
 
   const legacyPlugin = legacy({
     targets: ["defaults", "not IE 11"],

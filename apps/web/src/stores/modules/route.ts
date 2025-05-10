@@ -15,9 +15,6 @@ export const useRouteStore = defineStore('route-store', {
   }
 })
 
-
 // export const routeStore = useRouteStore()
-
-
-// 解构 Pinia store 中的响应式状态​​，同时保持其响应性
+// 解构Pinia store中的响应式状态，同时保持其响应性
 // export const useRouteStoreWithOut = storeToRefs(routeStore)
