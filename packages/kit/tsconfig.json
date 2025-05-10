@@ -24,6 +24,7 @@
     "strictNullChecks": true,
     "declaration": true,
     "outDir": "dist",
+    "declarationDir": "dist/types",
     "allowJs": true,
     "noEmit": false,
     "esModuleInterop": true,

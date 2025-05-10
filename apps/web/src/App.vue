@@ -13,7 +13,7 @@
 import { Version } from '@epoch/kit';
 import { buildKeepAliveRoutes, router } from "@/routes";
 
-console.log('[ Version ] >', Version);
+console.log('[ Version ] >', Version());
 
 const routes = router.getRoutes()
 const keeps = buildKeepAliveRoutes(routes);
