@@ -23,7 +23,6 @@
     "@epoch/stylelint": "workspace:*",
     "husky": "^9.1.7",
     "rimraf": "^5.0.5",
-    "stylelint": "^16.19.1",
     "turbo": "^2.5.3"
   },
   "husky": {
