@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "@epoch/commitlint": "workspace:*",
+    "@epoch/eslint": "workspace:*",
     "@epoch/stylelint": "workspace:*",
     "husky": "^9.1.7",
     "prettier": "^3.5.3",
