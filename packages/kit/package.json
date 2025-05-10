@@ -2,10 +2,11 @@
   "name": "@epoch/kit",
   "version": "1.0.0",
   "private": true,
-  "main": "./src/index.ts",
-  "types": "./types/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "clean": "rimraf .turbo node_modules dist"
+    "clean": "rimraf .turbo node_modules dist",
+    "tsc": "rimraf dist && tsc"
   },
   "dependencies": {
     "lodash-es": "^4.17.21"

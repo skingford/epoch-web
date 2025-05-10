@@ -2,20 +2,9 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "display": "Default",
   "compilerOptions": {
-    "target": "es2017",
-    "lib": [
-      "es2017",
-      "DOM",
-      "esnext.asynciterable"
-    ],
-    "typeRoots": [
-      "node_modules/@types",
-    ],
-    "types": [
-      "node"
-    ],
+    "target": "ESNext",
     "composite": false,
-    "declarationMap": true,
+    "declarationMap": false,
     "inlineSources": false,
     "isolatedModules": true,
     "noUnusedLocals": false,
@@ -42,15 +31,16 @@
     "importHelpers": true,
     "paths": {
       "@/*": [
-        "src/*"
+        "./src/*"
       ]
     }
   },
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "dist"
   ],
   "include": [
-    "./src/**/*.ts",
-    "./types/**/*.d.ts"
+    "src/**/*.ts",
+    "types/**/*.d.ts"
   ]
 }

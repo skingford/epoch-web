@@ -21,6 +21,7 @@
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
+    "@epoch/kit": "workspace:*",
     "@epoch/tsconfig": "workspace:*",
     "@epoch/vite": "workspace:*",
     "@types/node": "^22.15.3",

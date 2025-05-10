@@ -10,7 +10,10 @@
   </main>
 </template>
 <script setup lang="ts">
+import { Version } from '@epoch/kit';
 import { buildKeepAliveRoutes, router } from "@/routes";
+
+console.log('[ Version ] >', Version);
 
 const routes = router.getRoutes()
 const keeps = buildKeepAliveRoutes(routes);
