@@ -16,6 +16,7 @@
     "clean": "turbo run clean && rimraf node_modules"
   },
   "devDependencies": {
+    "@epoch/stylelint": "workspace:*",
     "@commitlint/cli": "^19.8.0",
     "@commitlint/config-conventional": "^19.8.0",
     "commitizen": "^4.3.1",

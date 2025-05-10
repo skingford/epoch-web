@@ -3,7 +3,6 @@ export default {
     'stylelint-config-standard',
     'stylelint-config-recommended-vue',
   ],
-  ignoreFiles: ['dist/**/*'],
   rules: {
     'selector-class-pattern': null,
     'no-descending-specificity': null,
