@@ -8,12 +8,13 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "turbo run dev",
     "build": "turbo run build",
+    "clean": "turbo run clean && rimraf node_modules",
+    "dev": "turbo run dev",
+    "format": "turbo run format",
     "lint": "turbo run lint",
     "lint:style": "turbo run lint:style",
-    "format": "turbo run format",
-    "clean": "turbo run clean && rimraf node_modules"
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@epoch/commitlint": "workspace:*",
