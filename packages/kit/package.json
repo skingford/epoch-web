@@ -5,9 +5,19 @@
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.mjs",
   "types": "dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.mjs",
+      "require": "./dist/cjs/index.js",
+      "types": "./dist/types/index.d.ts"
+    }
+  },
   "scripts": {
     "clean": "rimraf .turbo node_modules dist",
-    "build:tsc": "rimraf dist && tsc",
+    "build:types": "tsc -p tsconfig.esm.json --emitDeclarationOnly",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build": "rimraf dist && npm run build:types && npm run build:cjs && npm run build:esm",
     "build:rollup": "rimraf dist && rollup -c rollup.config.mjs"
   },
   "dependencies": {

@@ -22,9 +22,7 @@
     "pretty": true,
     "sourceMap": false,
     "strictNullChecks": true,
-    "declaration": true,
     "outDir": "dist",
-    "declarationDir": "dist/types",
     "allowJs": true,
     "noEmit": false,
     "esModuleInterop": true,
@@ -43,5 +41,9 @@
   "include": [
     "src/**/*.ts",
     "types/**/*.d.ts"
-  ]
+  ],
+  "ts-node": {
+    "esm": true,
+    "experimentalSpecifierResolution": "node"
+  },
 }
