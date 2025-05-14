@@ -34,6 +34,7 @@ pnpm clean
 pnpm add -wD pkg_name
 
 pnpm --filter "package-a package-b" add lodash
+pnpm --filter @epoch/web add alova
 ```
 
 ## 技术栈
