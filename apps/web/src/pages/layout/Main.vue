@@ -18,7 +18,7 @@ const open = () => {
 .bg {
   background: #f0f2f5;
   font-size: 16px;
-  padding: 20px;
+  padding: 10px 12px;
   color: #333;
 }
 </style>
