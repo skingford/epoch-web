@@ -5,10 +5,13 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%- title %><%- version %></title>
+    <link rel="stylesheet" href="/loader.css">
   </head>
   <body>
     <div id="app">
-      <!-- TODO: 添加应用装载前过度动画 -->
+      <div class="loader-container">
+        <div class="loader"></div>
+      </div>
     </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
