@@ -28,12 +28,12 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive } from 'vue'
 import { User, Lock } from '@element-plus/icons-vue'
 import type { FormInstance, FormRules } from 'element-plus'
-import { ElMessage } from 'element-plus'
 
-const loginFormRef = ref<FormInstance>()
+const router = useRouter()
+
+const loginFormRef = useTemplateRef<FormInstance>('loginFormRef')
 const loading = ref(false)
 
 const loginForm = reactive({
@@ -63,6 +63,8 @@ const handleLogin = async () => {
     console.log('登录表单数据：', loginForm)
 
     ElMessage.success('登录成功')
+
+    router.push('/manager')
   } catch (error) {
     console.error('表单验证失败：', error)
   } finally {

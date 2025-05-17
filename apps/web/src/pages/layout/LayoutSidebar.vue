@@ -39,7 +39,7 @@
           <el-icon>
             <setting />
           </el-icon>
-          <template #title>Navigator Four</template>
+          <template #title>设置</template>
         </el-menu-item>
       </el-menu>
     </el-scrollbar>
@@ -68,6 +68,7 @@ const handleClose = (key: string, keyPath: string[]) => {
   display: flex;
   flex-direction: column;
   border-right: 1px solid var(--el-menu-border-color);
+
   // height: 100%;
   // width: 200px;
   &-header {

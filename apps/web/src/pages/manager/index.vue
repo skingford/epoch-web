@@ -1,12 +1,11 @@
 <template>
   <div class="bg">
     <h1>Manager</h1>
+    <el-icon size="25"><i-ep-search /></el-icon>
     <el-button type="primary" @click="open">I am ElButton</el-button>
   </div>
 </template>
 <script setup lang="ts">
-import { ElMessage } from 'element-plus'
-
 const open = () => {
   ElMessage({
     message: 'Congrats, this is a success message.',
