@@ -17,8 +17,8 @@ const routes = [
           keepAlive: true,
         },
         components: {
-          default: () => import('@/pages/layout/Home.vue'),
-          LeftSidebar: () => import('@/pages/layout/LeftSidebar.vue'),
+          default: () => import('@/pages/layout/Main.vue'),
+          LeftSidebar: () => import('@/pages/layout/Header.vue'),
           RightSidebar: () => import('@/pages/layout/RightSidebar.vue'),
         },
       }

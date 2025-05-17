@@ -1,6 +1,7 @@
 import { createApp } from "vue";
 import "virtual:svg-icons-register";
-import "./style.css";
+import "normalize.css";
+import "./styles/index.scss";
 import App from "./App.vue";
 // import { setupVersionPolling } from "../config/version";
 import { router } from "./routes";
