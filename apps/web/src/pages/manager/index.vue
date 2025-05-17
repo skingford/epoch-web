@@ -1,6 +1,6 @@
 <template>
   <div class="bg">
-    home main
+    <h1>Manager</h1>
     <el-button type="primary" @click="open">I am ElButton</el-button>
   </div>
 </template>

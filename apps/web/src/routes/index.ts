@@ -7,22 +7,33 @@ const routes = [
     redirect: '/login',
   },
   {
-    path: '/layout',
+    path: '',
     component: () => import('@/pages/layout/index.vue'),
     children: [
       {
-        path: '',
+        path: 'manager',
+        component: () => import('@/pages/manager/index.vue'),
+      },
+      {
+        path: '/dashboard',
+        name: 'Dashboard',
         meta: {
-          title: '主页',
+          title: '面板',
           keepAlive: true,
         },
-        components: {
-          default: () => import('@/pages/layout/Main.vue'),
-          LayoutNavigator: () => import('@/pages/layout/Navigator.vue'),
-          LayoutSidebar: () => import('@/pages/layout/RightSidebar.vue'),
-        },
-      }
-    ],
+        component: () => import('@/pages/dashboard/index.vue'),
+        children: [
+          {
+            path: '',
+            components: {
+              default: () => import('@/pages/dashboard/Main.vue'),
+              DashboardLeft: () => import('@/pages/dashboard/Left.vue'),
+              DashboardRight: () => import('@/pages/dashboard/Right.vue'),
+            },
+          }
+        ]
+      },
+    ]
   },
   {
     path: '/login',
@@ -31,31 +42,6 @@ const routes = [
       title: '登录',
     },
     component: () => import('@/pages/login/index.vue'),
-  },
-  {
-    path: '/dashboard',
-    name: 'Dashboard',
-    meta: {
-      title: '面板',
-      keepAlive: true,
-    },
-    component: () => import('@/pages/dashboard/index.vue'),
-  },
-  {
-    path: "/user/:id",
-    component: () => import('@/pages/user/index.vue'),
-    children: [
-      {
-        path: 'coupon',
-        name: 'UserCoupon',
-        component: () => import('@/pages/user/coupon.vue'),
-      },
-      {
-        path: 'profile',
-        name: 'UserProfile',
-        component: () => import('@/pages/user/profile.vue'),
-      }
-    ]
   },
   {
     path: '/:pathMatch(.*)*',
