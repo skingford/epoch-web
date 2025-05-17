@@ -16,7 +16,7 @@ const open = () => {
 </script>
 <style lang="scss" scoped>
 .bg {
-  background: #f5f5f5;
+  background: #f0f2f5;
   font-size: 16px;
   padding: 20px;
   color: #333;

@@ -65,3 +65,6 @@ feat(login): add remember
 [web-infra-dev](https://github.com/web-infra-dev/modern.js)
 [changesets](https://github.com/changesets/changesets)
 [highlight](https://github.com/highlight/highlight?tab=readme-ov-file)
+
+## 文档
+[https://css-loaders.com/dots-bars/](https://css-loaders.com/dots-bars/)

@@ -18,8 +18,8 @@ const routes = [
         },
         components: {
           default: () => import('@/pages/layout/Main.vue'),
-          LeftSidebar: () => import('@/pages/layout/Header.vue'),
-          RightSidebar: () => import('@/pages/layout/RightSidebar.vue'),
+          LayoutNavigator: () => import('@/pages/layout/Navigator.vue'),
+          LayoutSidebar: () => import('@/pages/layout/RightSidebar.vue'),
         },
       }
     ],
