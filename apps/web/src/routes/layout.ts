@@ -10,7 +10,7 @@ const layoutRoutes = [
   {
     path: '/',
     component: () => import('@/pages/layout/index.vue'),
-    redirect: '/manager',
+    redirect: '/dashboard',
     children: [
       ...modulesRoutes
     ]
