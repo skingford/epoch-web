@@ -96,46 +96,92 @@ $max-width-mobile: 480px;
   top: 0;
   left: 0;
   overflow: hidden;
-}
 
-.login-card {
-  width: 100%;
-  max-width: 420px;
-  border-radius: $border-radius;
-  box-shadow: 0 4px 16px $box-shadow-color;
-  margin: 20px;
-}
+  .login-card {
+    width: 100%;
+    max-width: 420px;
+    border-radius: $border-radius;
+    box-shadow: 0 4px 16px $box-shadow-color;
+    margin: 20px;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.95);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-.card-header {
-  text-align: center;
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    }
 
-  h2 {
-    margin: 0;
-    color: $font-color;
-    font-size: $font-size-large;
-    font-weight: 600;
+    .card-header {
+      text-align: center;
+
+      h2 {
+        margin: 0;
+        color: $font-color;
+        font-size: $font-size-large;
+        font-weight: 600;
+        background: linear-gradient(45deg, $primary-color, $secondary-color);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: fadeIn 1s ease-out;
+      }
+    }
+
+    .login-button {
+      width: 100%;
+      padding: 12px 0;
+      font-size: $font-size-medium;
+      transition: all 0.3s ease;
+      background: linear-gradient(45deg, $primary-color, $secondary-color);
+      border: none;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba($primary-color, 0.3);
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
+    }
+
+    :deep(.el-form-item__label) {
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    :deep(.el-input__wrapper) {
+      box-shadow: 0 0 0 1px $input-border-color inset;
+      transition: all 0.3s ease;
+      background: rgba(255, 255, 255, 0.9);
+
+
+      &:hover {
+        box-shadow: 0 0 0 1px $input-hover-border-color inset;
+        transform: translateY(-1px);
+      }
+
+      &.is-focus {
+        box-shadow: 0 0 0 1px var(--el-color-primary) inset;
+        transform: translateY(-2px);
+      }
+    }
+
+    :deep(.el-input__inner) {
+      transition: all 0.3s ease;
+    }
   }
 }
 
-.login-button {
-  width: 100%;
-  padding: 12px 0;
-  font-size: $font-size-medium;
-}
-
-:deep(.el-form-item__label) {
-  font-weight: 500;
-}
-
-:deep(.el-input__wrapper) {
-  box-shadow: 0 0 0 1px $input-border-color inset;
-
-  &:hover {
-    box-shadow: 0 0 0 1px $input-hover-border-color inset;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
 
-  &.is-focus {
-    box-shadow: 0 0 0 1px var(--el-color-primary) inset;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
