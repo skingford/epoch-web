@@ -11,7 +11,8 @@
 </template>
 <script setup lang="ts">
 import { Version } from '@epoch/kit';
-import { buildKeepAliveRoutes, router } from "@/routes";
+import { buildKeepAliveRoutes } from "@/routes/util";
+import { router } from "@/routes";
 
 console.log('[ Version ] >', Version());
 

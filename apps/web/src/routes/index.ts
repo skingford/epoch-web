@@ -1,30 +1,36 @@
 import { createWebHashHistory, createRouter } from 'vue-router'
-import type { RouteRecordRaw } from 'vue-router'
 import { layoutRoutes } from './layout'
 
+
+const defaultRoutes = [{
+  path: '/login',
+  name: 'Login',
+  meta: {
+    title: '登录',
+  },
+  component: () => import('@/pages/login/index.vue'),
+}]
+
+const exceptionRoutes = [{
+  path: '/404',
+  name: 'NotFound',
+  meta: {
+    title: '404',
+  },
+  component: () => import('@/pages/exception/404.vue'),
+},
+{
+  path: '/:pathMatch(.*)*',
+  redirect: '/404',
+}]
+
+
 const routes = [
-  {
-    path: '/login',
-    name: 'Login',
-    meta: {
-      title: '登录',
-    },
-    component: () => import('@/pages/login/index.vue'),
-  },
+  ...defaultRoutes,
   ...layoutRoutes,
-  {
-    path: '/404',
-    name: 'NotFound',
-    meta: {
-      title: '404',
-    },
-    component: () => import('@/pages/exception/404.vue'),
-  },
-  {
-    path: '/:pathMatch(.*)*',
-    redirect: '/404',
-  }
+  ...exceptionRoutes,
 ]
+
 
 export const router = createRouter({
   history: createWebHashHistory(),
@@ -58,35 +64,4 @@ router.afterEach((to, from) => {
 // router.removeRoute('route-name')
 
 
-export function buildKeepAliveRoutes(routes: RouteRecordRaw[]) {
-  const keepAliveRoutes: string[] = [];
-  const routeStack: any[] = [...routes];
 
-  while (routeStack.length > 0) {
-    const route = routeStack.pop();
-
-    if (route.meta?.keepAlive && route.name) {
-      keepAliveRoutes.push(route.name);
-    }
-
-    if (route.children && route.children.length > 0) {
-      routeStack.push(...route.children);
-    }
-  }
-
-  return keepAliveRoutes;
-}
-
-const buildRoutes = (menuData) => {
-  return menuData.map(item => ({
-    path: item.path,
-    name: item.name,
-    component: () => import(`@/views/${item.component}.vue`),
-    meta: {
-      title: item.meta.title,
-      icon: item.meta.icon,
-      requiresAuth: true
-    },
-    children: item.children ? buildRoutes(item.children) : []
-  }))
-}

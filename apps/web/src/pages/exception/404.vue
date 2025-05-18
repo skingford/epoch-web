@@ -24,7 +24,7 @@
       </el-button>
     </div>
     <div class="particles">
-      <div v-for="n in 20" :key="n" class="particle" :style="getParticleStyle(n)"></div>
+      <div v-for="(_, index) in Array(20)" :key="index" class="particle" :style="getParticleStyle()"></div>
     </div>
   </div>
 </template>
