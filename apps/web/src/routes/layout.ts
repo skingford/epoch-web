@@ -6,7 +6,7 @@ function getModulesRoutes() {
 const modulesRoutes = getModulesRoutes()
 
 
-export const layoutRoutes = [
+const layoutRoutes = [
   {
     path: '/',
     component: () => import('@/pages/layout/index.vue'),
@@ -16,3 +16,5 @@ export const layoutRoutes = [
     ]
   }
 ]
+
+export default layoutRoutes

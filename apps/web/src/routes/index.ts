@@ -1,5 +1,5 @@
 import { createWebHashHistory, createRouter } from 'vue-router'
-import { layoutRoutes } from './layout'
+import layoutRoutes from './layout'
 
 
 const defaultRoutes = [{
