@@ -1,8 +1,9 @@
 <template>
   <main class="layout">
-    <LayoutSidebar class="layout-right-sidebar" />
+    <LayoutSidebar />
     <div class="layout-container">
-      <LayoutNav class="layout-navigator" />
+      <LayoutNav />
+      <LayoutBreadcrumb />
       <LayoutView class="layout-content" />
     </div>
   </main>
@@ -11,6 +12,7 @@
 import LayoutSidebar from './LayoutSidebar.vue';
 import LayoutNav from './LayoutNav.vue';
 import LayoutView from './LayoutView.vue';
+import LayoutBreadcrumb from './LayoutBreadcrumb.vue';
 
 </script>
 <style lang="scss" scoped>

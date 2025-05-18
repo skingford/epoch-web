@@ -1,10 +1,14 @@
 <template>
   <aside class="layout-sidebar">
     <div class="layout-sidebar-header">
-      <div>管理系统</div>
+      <div>EPOCH</div>
     </div>
     <el-scrollbar class="layout-sidebar-scrollbar">
       <el-menu default-active="2" class="layout-menu" :collapse="isCollapse" @open="handleOpen" @close="handleClose">
+        <el-menu-item index="5">
+          <el-icon><i-ep-monitor /></el-icon>
+          <template #title>业务看板</template>
+        </el-menu-item>
         <el-sub-menu index="1">
           <template #title>
             <el-icon>
@@ -69,8 +73,6 @@ const handleClose = (key: string, keyPath: string[]) => {
   flex-direction: column;
   border-right: 1px solid var(--el-menu-border-color);
 
-  // height: 100%;
-  // width: 200px;
   &-header {
     height: 55px;
     line-height: 55px;
