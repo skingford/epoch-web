@@ -4,10 +4,13 @@
       <div>EPOCH</div>
     </div>
     <el-scrollbar class="layout-sidebar-scrollbar">
-      <el-menu default-active="2" class="layout-menu" :collapse="isCollapse" @open="handleOpen" @close="handleClose">
-        <el-menu-item index="5">
-          <el-icon><i-ep-monitor /></el-icon>
-          <template #title>业务看板</template>
+      <el-menu class="layout-menu" router :default-active="$route.path" :collapse="isCollapse" @open="handleOpen"
+        @close="handleClose">
+        <el-menu-item v-for="menu in menus" :key="menu.path" :index="menu.path">
+          <el-icon v-if="menu.meta?.icon">
+            <component :is="getIconComponent(menu.meta.icon)" />
+          </el-icon>
+          <template #title>{{ menu.meta.title }}</template>
         </el-menu-item>
         <el-sub-menu index="1">
           <template #title>
@@ -52,11 +55,15 @@
 <script lang="ts" setup>
 import {
   Document,
-  Menu as IconMenu,
   Location,
   Setting,
+  Monitor,
+  User,
 } from '@element-plus/icons-vue'
-import routes from '@/routes/layout'
+import { router } from "@/routes";
+import { ref, computed } from 'vue'
+
+const routes = router.getRoutes()
 
 
 const isCollapse = ref(false)
@@ -66,6 +73,22 @@ const handleOpen = (key: string, keyPath: string[]) => {
 const handleClose = (key: string, keyPath: string[]) => {
   console.log(key, keyPath)
 }
+
+const menus = computed(() => {
+  return routes.filter(route => route.meta?.showMenu)
+})
+
+console.log('[ menuList ] >', menus.value)
+
+function getIconComponent(iconName) {
+  const icons = {
+    "monitor": Monitor,
+    "user": User,
+  }
+  const key = iconName.toLowerCase()
+  return icons[key]
+}
+
 </script>
 
 <style lang="scss" scoped>

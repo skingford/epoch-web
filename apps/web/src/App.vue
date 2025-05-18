@@ -10,21 +10,13 @@
   </el-config-provider>
 </template>
 <script setup lang="ts">
-import { Version } from '@epoch/kit';
-import { buildKeepAliveRoutes } from "@/routes/util";
 import { router } from "@/routes";
+import { buildKeepAliveRoutes } from "@/routes/util";
 
-console.log('[ Version ] >', Version());
 
 const size = ref<'default' | 'small' | 'large'>('default')
 const zIndex = ref(3000)
 
 const routes = router.getRoutes()
 const keeps = buildKeepAliveRoutes(routes);
-
-
-console.log('[ routes ] >', routes, keeps)
-
-
-
 </script>
