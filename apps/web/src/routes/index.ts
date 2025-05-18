@@ -13,9 +13,16 @@ const routes = [
   },
   ...layoutRoutes,
   {
-    path: '/:pathMatch(.*)*',
+    path: '/404',
     name: 'NotFound',
-    redirect: '/',
+    meta: {
+      title: '404',
+    },
+    component: () => import('@/pages/exception/404.vue'),
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    redirect: '/404',
   }
 ]
 

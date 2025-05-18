@@ -1,6 +1,6 @@
 export const layoutRoutes = [
   {
-    path: '',
+    path: '/',
     component: () => import('@/pages/layout/index.vue'),
     redirect: '/manager',
     children: [
