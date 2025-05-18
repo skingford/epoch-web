@@ -1,6 +1,6 @@
 <template>
-  <el-menu class="layout-menu" router :default-active="$route.path" :collapse="isCollapse" @open="handleOpen"
-    @close="handleClose">
+  <el-menu class="layout-menu" router unique-opened :default-active="$route.path" :collapse="isCollapse"
+    @open="handleOpen" @close="handleClose">
     <menu-item :menus="menus" />
   </el-menu>
 </template>
