@@ -4,10 +4,6 @@ import { layoutRoutes } from './layout'
 
 const routes = [
   {
-    path: '/',
-    redirect: '/login',
-  },
-  {
     path: '/login',
     name: 'Login',
     meta: {
