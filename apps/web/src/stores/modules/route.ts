@@ -1,6 +1,8 @@
+
 export const useRouteStore = defineStore('route-store', {
   state: () => ({
-    routes: [] as any[]
+    routes: [] as any[],
+    historyRoutes: [] as any[]
   }),
   getters: {
     doubleCount: (state) => state.routes.length * 2,

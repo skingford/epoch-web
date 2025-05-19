@@ -3,7 +3,7 @@
     <LayoutSidebar />
     <div class="layout-container">
       <LayoutNav />
-      <LayoutBreadcrumb />
+      <HistoryRoute />
       <LayoutView class="layout-content" />
     </div>
   </main>
@@ -12,7 +12,7 @@
 import LayoutSidebar from './LayoutSidebar.vue';
 import LayoutNav from './LayoutNav.vue';
 import LayoutView from './LayoutView.vue';
-import LayoutBreadcrumb from './LayoutBreadcrumb.vue';
+import HistoryRoute from './HistoryRoute.vue';
 
 </script>
 <style lang="scss" scoped>

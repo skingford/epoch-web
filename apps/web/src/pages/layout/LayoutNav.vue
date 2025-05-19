@@ -1,9 +1,12 @@
 <template>
   <header class="layout-nav">
-    <el-icon size="30" class="layout-nav-icon">
-      <i-ep-fold />
-      <!-- <i-ep-expand /> -->
-    </el-icon>
+    <div class="layout-nav-left">
+      <el-icon size="30" class="layout-nav-icon">
+        <component :is="isCollapse ? Expand : Fold" />
+      </el-icon>
+      <LayoutBreadcrumb />
+    </div>
+
     <div class="layout-nav-content">
       <div class="layout-nav-content-item">
         <el-icon size="24" class="nav-icon">
@@ -39,8 +42,12 @@ import {
   ArrowDown,
   CirclePlusFilled,
   Plus,
+  Fold,
+  Expand,
+} from '@element-plus/icons-vue';
+import LayoutBreadcrumb from './LayoutBreadcrumb.vue';
 
-} from '@element-plus/icons-vue'
+const isCollapse = ref(false)
 </script>
 <style lang="scss" scoped>
 .layout-nav {
@@ -55,11 +62,18 @@ import {
   &-icon {
     cursor: pointer;
     transition: all 0.3s;
+    margin-right: 20px;
 
     &:hover {
       color: var(--el-color-primary);
       transform: scale(1.1);
     }
+  }
+
+  &-left {
+    display: flex;
+    align-items: center;
+    height: 100%;
   }
 
   &-content {

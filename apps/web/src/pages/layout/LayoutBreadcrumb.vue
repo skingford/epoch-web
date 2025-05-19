@@ -52,17 +52,3 @@ watch(
   { immediate: true }
 )
 </script>
-
-<style scoped lang="scss">
-.layout-breadcrumb {
-  border-bottom: 1px solid var(--el-menu-border-color);
-  height: 40px;
-  line-height: 40px;
-  padding: 0 20px;
-
-  .breadcrumb {
-    height: 40px;
-    line-height: 40px;
-  }
-}
-</style>
