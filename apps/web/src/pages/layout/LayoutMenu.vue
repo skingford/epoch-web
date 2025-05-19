@@ -1,39 +1,23 @@
 <template>
-  <el-menu class="layout-menu" router unique-opened :default-active="$route.path" :collapse="isCollapse"
+  <el-menu
+class="layout-menu" router unique-opened :default-active="$route.path" :collapse="isCollapse"
     @open="handleOpen" @close="handleClose">
     <menu-item :menus="menus" />
   </el-menu>
 </template>
 
 <script setup>
-import * as Icons from '@element-plus/icons-vue'
 import MenuItem from './MenuItem.vue'
-
-const props = defineProps({
-  menus: {
-    type: Array,
-    required: true
-  },
-  parent: {
-    type: Object,
-    default: () => ({})
-  },
-  isCollapse: {
-    type: Boolean,
-    default: false
-  }
-})
+import { router } from "@/routes";
 
 const emit = defineEmits(['open', 'close'])
 
-const route = useRoute()
-const fullPath = computed(() => {
-  if (props.parent && props.parent.path) {
-    return `${props.parent.path}`
-  }
-  return route.path
-})
+const isCollapse = ref(false)
 
+const routes = router.getRoutes()
+const menus = computed(() => {
+  return routes.filter(route => route.meta?.showMenu)
+})
 
 const handleOpen = (key, keyPath) => {
   emit('open', key, keyPath)
@@ -42,25 +26,13 @@ const handleOpen = (key, keyPath) => {
 const handleClose = (key, keyPath) => {
   emit('close', key, keyPath)
 }
-
-const getIconComponent = (iconName) => {
-  if (!iconName) return null
-  if (typeof iconName === 'object') return iconName
-
-  // 处理多种图标命名格式
-  const iconKey = iconName
-    .replace(/^el-icon-/, '')
-    .replace(/^[a-z]/, m => m.toUpperCase())
-    .replace(/-([a-z])/g, (_, p1) => p1.toUpperCase())
-
-  return Icons[iconKey] || null
-}
-
-const buildPath = (menu) => {
-  console.log('[ props.parent ] >', props.parent)
-  if (props.parent && props.parent.path) {
-    return `${props.parent.path}/${menu.path}`
-  }
-  return `${menu.path}`
-}
 </script>
+<style lang="scss" scoped>
+.layout-menu {
+  &:not(.el-menu--collapse) {
+    width: 200px;
+    min-height: 400px;
+    border-right: none;
+  }
+}
+</style>

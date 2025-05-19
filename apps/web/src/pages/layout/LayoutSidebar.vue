@@ -4,19 +4,12 @@
       <div>EPOCH</div>
     </div>
     <el-scrollbar class="layout-sidebar-scrollbar">
-      <LayoutMenu :menus="menus" />
+      <layout-menu class="layout-menu" />
     </el-scrollbar>
   </aside>
 </template>
 <script lang="ts" setup>
 import LayoutMenu from './LayoutMenu.vue'
-import { router } from "@/routes";
-
-const routes = router.getRoutes()
-
-const menus = computed(() => {
-  return routes.filter(route => route.meta?.showMenu)
-})
 </script>
 
 <style lang="scss" scoped>
@@ -37,14 +30,6 @@ const menus = computed(() => {
 
   &-scrollbar {
     flex: 1;
-  }
-
-  .layout-menu {
-    &:not(.el-menu--collapse) {
-      width: 200px;
-      min-height: 400px;
-      border-right: none;
-    }
   }
 }
 </style>
