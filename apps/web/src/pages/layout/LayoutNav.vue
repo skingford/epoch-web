@@ -8,16 +8,18 @@
     </div>
 
     <div class="layout-nav-content">
-      <div class="layout-nav-content-item">
+      <div class="layout-nav-content-item" @click="onRefresh">
         <el-icon size="24" class="nav-icon">
           <i-ep-refresh />
         </el-icon>
       </div>
-      <div class="layout-nav-content-item">
+
+      <div class="layout-nav-content-item" @click="toggle">
         <el-icon size="24" class="nav-icon">
           <i-ep-full-screen />
         </el-icon>
       </div>
+
       <div class="layout-nav-content-item">
         <el-dropdown trigger="click">
           <span class="el-dropdown-link">
@@ -38,6 +40,7 @@
   </header>
 </template>
 <script lang="ts" setup>
+import { useFullscreen } from '@vueuse/core';
 import {
   ArrowDown,
   CirclePlusFilled,
@@ -47,7 +50,13 @@ import {
 } from '@element-plus/icons-vue';
 import LayoutBreadcrumb from './LayoutBreadcrumb.vue';
 
+
 const isCollapse = ref(false)
+
+const { toggle } = useFullscreen()
+const onRefresh = () => {
+  window.location.reload()
+}
 </script>
 <style lang="scss" scoped>
 .layout-nav {
