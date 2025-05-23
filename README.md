@@ -59,6 +59,7 @@ pnpm --filter @epoch/web add alova
 feat(login): add remember
 
 ## 参考
+
 [vue3-turbo-component-lib-template](https://github.com/huangmingfu/vue3-turbo-component-lib-template/blob/master/README.md)
 [turborepo](https://github.com/vercel/turborepo/tree/main)
 [blitz](https://github.com/blitz-js/blitz)
@@ -67,5 +68,11 @@ feat(login): add remember
 [highlight](https://github.com/highlight/highlight?tab=readme-ov-file)
 
 ## 文档
+
 [https://css-loaders.com/dots-bars/](https://css-loaders.com/dots-bars/)
 [https://animejs.com/documentation/](https://animejs.com/documentation/)
+
+## 工具
+
+[https://stitch.withgoogle.com/](https://stitch.withgoogle.com/)
+[https://www.figma.com/](https://www.figma.com/)
