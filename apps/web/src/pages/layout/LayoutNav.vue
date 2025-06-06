@@ -1,7 +1,7 @@
 <template>
   <header class="layout-nav">
-    <div class="layout-nav-left" @click="menuStore.toggleCollapse">
-      <el-icon size="30" class="layout-nav-icon">
+    <div class="layout-nav-left">
+      <el-icon size="30" class="layout-nav-icon" @click="menuStore.toggleCollapse">
         <component :is="isCollapse ? Expand : Fold" />
       </el-icon>
       <LayoutBreadcrumb />
@@ -41,9 +41,6 @@
 </template>
 <script lang="ts" setup>
 import { useFullscreen } from '@vueuse/core';
-import { useMenuStore } from '@/stores'
-const menuStore = useMenuStore()
-
 import {
   ArrowDown,
   CirclePlusFilled,
@@ -51,12 +48,13 @@ import {
   Fold,
   Expand,
 } from '@element-plus/icons-vue';
+import { useMenuStore } from '@/stores'
 import LayoutBreadcrumb from './LayoutBreadcrumb.vue';
 
-
-const isCollapse = ref(false)
-
 const { toggle } = useFullscreen()
+const menuStore = useMenuStore()
+const { isCollapse } = storeToRefs(menuStore)
+
 const onRefresh = () => {
   window.location.reload()
 }
