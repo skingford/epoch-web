@@ -6,14 +6,16 @@
           <h2>欢迎登录</h2>
         </div>
       </template>
-      <el-form ref="loginFormRef" :model="loginForm" :rules="loginRules" label-position="top"
+      <el-form
+ref="loginFormRef" :model="loginForm" :rules="loginRules" label-position="top"
         @keyup.enter="handleLogin">
         <el-form-item label="用户名" prop="username">
           <el-input v-model="loginForm.username" placeholder="请输入用户名" :prefix-icon="User" size="large" />
         </el-form-item>
 
         <el-form-item label="密码" prop="password">
-          <el-input v-model="loginForm.password" type="password" placeholder="请输入密码" :prefix-icon="Lock" show-password
+          <el-input
+v-model="loginForm.password" type="password" placeholder="请输入密码" :prefix-icon="Lock" show-password
             size="large" />
         </el-form-item>
 
@@ -64,7 +66,7 @@ const handleLogin = async () => {
 
     ElMessage.success('登录成功')
 
-    router.push('/manager')
+    router.push('/')
   } catch (error) {
     console.error('表单验证失败：', error)
   } finally {

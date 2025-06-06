@@ -1,5 +1,6 @@
+import {StoreKey} from './consts'
 
-export const useRouteStore = defineStore('route-store', {
+export const useRouteStore = defineStore(StoreKey.route, {
   state: () => ({
     routes: [] as any[],
     historyRoutes: [] as any[]
