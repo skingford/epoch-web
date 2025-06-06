@@ -1,7 +1,10 @@
 <template>
   <div class="layout-breadcrumb">
     <el-breadcrumb class="breadcrumb" separator="/">
-      <el-breadcrumb-item v-for="item in breadcrumbs" :key="item.path" :to="item.path">
+      <el-breadcrumb-item to="/">
+        首页
+      </el-breadcrumb-item>
+      <el-breadcrumb-item v-for="item in breadcrumbs" :key="item.path">
         {{ item.title }}
       </el-breadcrumb-item>
     </el-breadcrumb>
@@ -21,26 +24,15 @@ const breadcrumbs = ref<BreadcrumbItem[]>([])
 
 // 生成面包屑数据
 const generateBreadcrumbs = (matched: RouteLocationMatched[]) => {
-  const items: BreadcrumbItem[] = []
-  
-  // 始终添加首页
-  items.push({
-    path: '/',
-    title: '首页'
-  })
-
-  // 遍历路由匹配记录
-  matched.forEach(item => {
-    // 跳过没有 meta.title 的路由
+  return matched.reduce<BreadcrumbItem[]>((acc, item) => {
     if (item.meta?.title) {
-      items.push({
+      acc.push({
         path: item.path,
         title: item.meta.title as string
       })
     }
-  })
-
-  return items
+    return acc
+  }, [])
 }
 
 // 监听路由变化
