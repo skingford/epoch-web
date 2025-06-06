@@ -9,10 +9,12 @@ class="layout-menu" router unique-opened :default-active="$route.path" :collapse
 <script setup>
 import MenuItem from './MenuItem.vue'
 import { router } from "@/routes";
+import { useMenuStore } from '@/stores'
 
 const emit = defineEmits(['open', 'close'])
+const menuStore = useMenuStore()
+const { isCollapse } = storeToRefs(menuStore)
 
-const isCollapse = ref(false)
 
 const routes = router.getRoutes()
 const menus = computed(() => {

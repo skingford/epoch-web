@@ -1,6 +1,6 @@
 <template>
   <header class="layout-nav">
-    <div class="layout-nav-left">
+    <div class="layout-nav-left" @click="menuStore.toggleCollapse">
       <el-icon size="30" class="layout-nav-icon">
         <component :is="isCollapse ? Expand : Fold" />
       </el-icon>
@@ -41,6 +41,9 @@
 </template>
 <script lang="ts" setup>
 import { useFullscreen } from '@vueuse/core';
+import { useMenuStore } from '@/stores'
+const menuStore = useMenuStore()
+
 import {
   ArrowDown,
   CirclePlusFilled,

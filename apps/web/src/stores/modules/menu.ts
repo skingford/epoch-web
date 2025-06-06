@@ -1,14 +1,17 @@
-export const useRouteStore = defineStore('menu-store', {
+import {StoreKey} from './consts'
+
+export const useMenuStore = defineStore(StoreKey.menu, {
   state: () => ({
-    routes: [] as any[],
-    historyRoutes: [] as any[]
+    isCollapse:false,
+    count:0,
+    name:'Eduardo'
   }),
   getters: {
-    doubleCount: (state) => state.routes.length * 2,
+    doubleCount: (state) => state.count * 2,
   },
   actions: {
-    addRoute(route) {
-      this.routes.push(route)
+    toggleCollapse() {
+      this.isCollapse = !this.isCollapse
     }
   }
 })

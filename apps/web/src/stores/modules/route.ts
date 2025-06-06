@@ -1,4 +1,4 @@
-import {StoreKey} from './consts'
+import { StoreKey } from './consts';
 
 export const useRouteStore = defineStore(StoreKey.route, {
   state: () => ({
