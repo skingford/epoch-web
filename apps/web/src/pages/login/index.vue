@@ -32,6 +32,9 @@ v-model="loginForm.password" type="password" placeholder="请输入密码" :pref
 <script setup lang="ts">
 import { User, Lock } from '@element-plus/icons-vue'
 import type { FormInstance, FormRules } from 'element-plus'
+import { useAuthStore } from '@/stores'
+
+const authStore = useAuthStore()
 
 const router = useRouter()
 
@@ -61,11 +64,15 @@ const handleLogin = async () => {
     await loginFormRef.value.validate()
     loading.value = true
 
-    // TODO: 实现登录逻辑
-    console.log('登录表单数据：', loginForm)
+
+    await authStore.login({
+      account: loginForm.username,
+      password: loginForm.password
+    })
+
+    console.log("--- login success-----")
 
     ElMessage.success('登录成功')
-
     router.push('/')
   } catch (error) {
     console.error('表单验证失败：', error)
