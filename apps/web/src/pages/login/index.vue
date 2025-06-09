@@ -33,6 +33,8 @@ v-model="loginForm.password" type="password" placeholder="请输入密码" :pref
 import { User, Lock } from '@element-plus/icons-vue'
 import type { FormInstance, FormRules } from 'element-plus'
 import { useAuthStore } from '@/stores'
+import { testRsaEncrypt } from '@/utils/rsa_test'
+
 
 const authStore = useAuthStore()
 
@@ -80,6 +82,10 @@ const handleLogin = async () => {
     loading.value = false
   }
 }
+
+onMounted(() => {
+  testRsaEncrypt()
+})
 </script>
 
 <style lang="scss" scoped>
